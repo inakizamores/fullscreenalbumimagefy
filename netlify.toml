@@ -1,23 +1,18 @@
 [[redirects]]
-  from = "/callback"
+  from = "/callback/*"  # Or "/callback" if you don't expect any parameters in the callback
   to = "/.netlify/functions/exchange-token"
   status = 200
 
 [[redirects]]
-  from = "/.netlify/functions/*"
-  to = "/functions/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
+  from = "/*"  # Catch-all redirect
   to = "/index.html"
   status = 200
 
 [build]
   command = "npm run build"
-  functions = "functions"
-  publish = "dist"
+  functions = "functions"  # Correct
+  publish = "dist"       # Correct
 
 [build.environment]
   SPOTIFY_CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID"  # Replace with your actual Client ID in Netlify's UI
-  REDIRECT_URI = "https://fullscreenalbumimagefy.netlify.app/callback"
+  REDIRECT_URI = "https://fullscreenalbumimagefy.netlify.app/callback" # Correct
