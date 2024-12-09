@@ -2,6 +2,11 @@
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 const scopes = 'user-read-currently-playing';
+const clientId = process.env.VITE_SPOTIFY_CLIENT_ID;
+const redirectUri = process.env.VITE_REDIRECT_URI;
+const scopes = 'user-read-currently-playing';
+
+// ... rest of your script.js
 
 // Log environment variables for debugging (in deployed site)
 console.log("Client ID:", clientId);
